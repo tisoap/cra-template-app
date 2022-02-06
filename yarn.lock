@@ -9002,6 +9002,7 @@ __metadata:
     eslint-plugin-testing-library: 5.0.5
     framer-motion: 6.2.4
     http-server: 14.1.0
+    jest-extended: 2.0.0
     prettier: 2.5.1
     react: 17.0.2
     react-dom: 17.0.2
@@ -13723,7 +13724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^27.0.0, jest-diff@npm:^27.5.0":
+"jest-diff@npm:^27.0.0, jest-diff@npm:^27.2.5, jest-diff@npm:^27.5.0":
   version: 27.5.0
   resolution: "jest-diff@npm:27.5.0"
   dependencies:
@@ -13786,7 +13787,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-get-type@npm:^27.5.0":
+"jest-extended@npm:2.0.0":
+  version: 2.0.0
+  resolution: "jest-extended@npm:2.0.0"
+  dependencies:
+    jest-diff: ^27.2.5
+    jest-get-type: ^27.0.6
+  peerDependencies:
+    jest: ">=27.2.5"
+  checksum: cd645b460ac68dec41918f1c55e84406828961a7dfa5b8a88e2f38d946399c9b6678c2443fcb88c375c7212008a6ccb2f1ad2eb98cccc0e3f8abcc68c4e68890
+  languageName: node
+  linkType: hard
+
+"jest-get-type@npm:^27.0.6, jest-get-type@npm:^27.5.0":
   version: 27.5.0
   resolution: "jest-get-type@npm:27.5.0"
   checksum: d693e8fc35e964b8f34bbef524d26afa8a418dfd8ec4d5bdbe4af7fc9b2925eccc861c55424996f2ceaf6b4441b7556ba50327861638788251efe5c6cfe1a298
