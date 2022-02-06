@@ -5,6 +5,7 @@
 	"scripts": {
 		"build": "react-scripts build",
 		"lint": "eslint --report-unused-disable-directives --fix ./src --ext .js,.ts,.tsx",
+		"spellcheck": "cspell --no-progress './src/**/*.{js,jsx,ts,tsx,json,css,scss}'",
 		"start": "react-scripts start",
 		"test": "react-scripts test"
 	},
@@ -55,5 +56,8 @@
 	},
 	"engines": {
 		"node": ">=14"
+	},
+	"devDependencies": {
+		"cspell": "^5.18.3"
 	}
 }

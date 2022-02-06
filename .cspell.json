@@ -1,0 +1,19 @@
+{
+	"version": "0.2",
+	"language": "en,lorem",
+	"ignorePaths": [
+		".vscode/**",
+		".yarn/**",
+		"coverage/**",
+		"node_modules/**",
+		"storybook-static/**",
+		".eslintrc",
+		"package.json",
+		"yarn.lock"
+	],
+	"allowCompoundWords": false,
+	"words": [
+		"Immer",
+		"reduxjs"
+	]
+}

@@ -38,7 +38,7 @@ export function Counter() {
 			</div>
 			<div className={styles.row}>
 				<input
-					className={styles.textbox}
+					className={styles.textBox}
 					aria-label='Set increment amount'
 					value={incrementAmount}
 					onChange={(e) => setIncrementAmount(e.target.value)}
