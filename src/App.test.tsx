@@ -1,13 +1,12 @@
 import { render, screen } from '@testing-library/react'
-import { Provider } from 'react-redux'
 import App from './App'
-import { store } from './app/store'
+import { Providers } from './providers'
 
 test('renders learn react link', () => {
 	render(
-		<Provider store={store}>
+		<Providers>
 			<App />
-		</Provider>
+		</Providers>
 	)
 
 	expect(screen.getByText(/learn/i)).toBeInTheDocument()
