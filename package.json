@@ -3,12 +3,14 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"build": "react-scripts build",
+		"build": "yarn build-storybook && react-scripts build",
+		"build-storybook": "build-storybook --quiet --loglevel error",
 		"check": "yarn typecheck && yarn spellcheck && yarn lint && yarn test",
 		"coverage": "yarn test && http-server coverage",
 		"lint": "eslint --report-unused-disable-directives --fix ./src --ext .js,.ts,.tsx",
 		"spellcheck": "cspell --no-progress './src/**/*.{js,jsx,ts,tsx,json,css,scss}'",
 		"start": "react-scripts start",
+		"storybook": "start-storybook -p 6006 --quiet",
 		"test": "react-scripts test --watchAll=false --coverage",
 		"typecheck": "tsc --noEmit"
 	},
@@ -23,9 +25,6 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	},
-	"eslintConfig": {
-		"extends": "react-app"
 	},
 	"jest": {
 		"collectCoverageFrom": [
@@ -46,6 +45,15 @@
 		"react-scripts": "5.0.0"
 	},
 	"devDependencies": {
+		"@storybook/addon-actions": "6.4.18",
+		"@storybook/addon-docs": "6.4.18",
+		"@storybook/addon-essentials": "6.4.18",
+		"@storybook/addon-links": "6.4.18",
+		"@storybook/builder-webpack5": "6.4.18",
+		"@storybook/manager-webpack5": "6.4.18",
+		"@storybook/node-logger": "6.4.18",
+		"@storybook/preset-create-react-app": "4.0.0",
+		"@storybook/react": "6.4.18",
 		"@testing-library/jest-dom": "5.16.2",
 		"@testing-library/react": "12.1.2",
 		"@testing-library/user-event": "13.5.0",
@@ -70,7 +78,8 @@
 		"eslint-plugin-testing-library": "5.0.5",
 		"http-server": "14.1.0",
 		"prettier": "2.5.1",
-		"typescript": "4.5.5"
+		"typescript": "4.5.5",
+		"webpack": "5.68.0"
 	},
 	"engines": {
 		"node": ">=16"

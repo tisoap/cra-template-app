@@ -14,6 +14,9 @@
 	"allowCompoundWords": false,
 	"words": [
 		"Immer",
-		"reduxjs"
+		"reduxjs",
+		"sonarjs",
+		"testcafe",
+		"Viewports"
 	]
 }
