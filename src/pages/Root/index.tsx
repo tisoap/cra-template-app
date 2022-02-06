@@ -1,8 +1,8 @@
-import { Counter } from './features/counter/Counter'
+import { Counter } from 'src/components/Counter'
 import logo from './logo.svg'
-import './App.css'
+import './styles.css'
 
-function App() {
+export const RootPage = () => {
 	return (
 		<div className='App'>
 			<header className='App-header'>
@@ -53,5 +53,3 @@ function App() {
 		</div>
 	)
 }
-
-export default App

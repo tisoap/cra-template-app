@@ -1,10 +1,10 @@
 import { render } from 'react-dom'
+import { RootPage } from 'src/pages/Root'
 import { Providers } from 'src/providers'
-import App from './App'
 
 render(
 	<Providers>
-		<App />
+		<RootPage />
 	</Providers>,
 	document.getElementById('root')
 )

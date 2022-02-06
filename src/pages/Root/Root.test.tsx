@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react'
-import App from './App'
-import { Providers } from './providers'
+import { Providers } from 'src/providers'
+import { RootPage } from './index'
 
 test('renders learn react link', () => {
 	render(
 		<Providers>
-			<App />
+			<RootPage />
 		</Providers>
 	)
 
