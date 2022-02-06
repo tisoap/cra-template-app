@@ -4,10 +4,13 @@
 	"private": true,
 	"scripts": {
 		"build": "react-scripts build",
+		"check": "yarn typecheck && yarn spellcheck && yarn lint && yarn test",
+		"coverage": "yarn test && http-server coverage",
 		"lint": "eslint --report-unused-disable-directives --fix ./src --ext .js,.ts,.tsx",
 		"spellcheck": "cspell --no-progress './src/**/*.{js,jsx,ts,tsx,json,css,scss}'",
 		"start": "react-scripts start",
-		"test": "react-scripts test"
+		"test": "react-scripts test --watchAll=false --coverage",
+		"typecheck": "tsc --noEmit"
 	},
 	"browserslist": {
 		"production": [
@@ -23,6 +26,17 @@
 	},
 	"eslintConfig": {
 		"extends": "react-app"
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"src/**/*.{ts, tsx}"
+		],
+		"coverageReporters": [
+			"text",
+			"html"
+		],
+		"resetMocks": true,
+		"restoreMocks": true
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "1.7.2",
@@ -54,6 +68,7 @@
 		"eslint-plugin-storybook": "0.5.6",
 		"eslint-plugin-testcafe": "0.2.1",
 		"eslint-plugin-testing-library": "5.0.5",
+		"http-server": "14.1.0",
 		"prettier": "2.5.1",
 		"typescript": "4.5.5"
 	},
