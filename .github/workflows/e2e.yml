@@ -27,6 +27,6 @@ jobs:
       - name: Run End-to-End Tests
         uses: DevExpress/testcafe-action@latest
         with:
-          args: "chrome src/e2e/tests --concurrency 2"
+          args: "chrome:headless src/e2e/tests"
         env:
           TEST_URL: ${{ steps.deploy.outputs.preview-url }}
