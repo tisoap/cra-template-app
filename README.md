@@ -1,9 +1,8 @@
-# Next Template App
+# Create React App Template
 
-![Code Quality](https://github.com/tisoap/next-template-app/actions/workflows/code-quality.yml/badge.svg)
-![End to End Tests](https://github.com/tisoap/next-template-app/actions/workflows/e2e.yml/badge.svg)
-![Unit and Regression Tests](https://github.com/tisoap/next-template-app/actions/workflows/unit.yml/badge.svg)
-![Vercel](https://vercelbadge.vercel.app/api/tisoap/cra-template-app?style=flat)
+![Code Quality](https://github.com/tisoap/cra-template-app/actions/workflows/code-quality.yml/badge.svg)
+![End to End Tests](https://github.com/tisoap/cra-template-app/actions/workflows/e2e.yml/badge.svg)
+![Unit and Regression Tests](https://github.com/tisoap/cra-template-app/actions/workflows/unit.yml/badge.svg)
 ![Create React App](https://img.shields.io/badge/CRA-Typescript-007ACC?logo=react&logoColor=white)
 ![Chakra UI](https://img.shields.io/badge/Chakra_UI-29B9AD?logo=chakraui&logoColor=white)
 ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-6441AA?logo=redux&logoColor=white)
