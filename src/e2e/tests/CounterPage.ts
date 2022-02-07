@@ -1,7 +1,7 @@
 import { Selector, test, fixture } from 'testcafe'
 import { TEST_URL } from '../constants'
 
-fixture`Counter Page`.page`${TEST_URL}counter`
+fixture`Counter Page`.page`${TEST_URL}/counter`
 
 test('Async add two', async (t) => {
 	const counter = Selector('span').innerText
