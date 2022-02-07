@@ -1,7 +1,9 @@
+import { Center, Heading } from '@chakra-ui/react'
+
 export const IndexPage = () => {
 	return (
-		<div>
-			<p>Index</p>
-		</div>
+		<Center p={5}>
+			<Heading>Index Page</Heading>
+		</Center>
 	)
 }

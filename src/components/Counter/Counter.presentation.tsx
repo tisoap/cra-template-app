@@ -1,4 +1,12 @@
-import { Button, Text, HStack, Input } from '@chakra-ui/react'
+import {
+	Button,
+	Text,
+	HStack,
+	Input,
+	Box,
+	Wrap,
+	WrapItem
+} from '@chakra-ui/react'
 import { useState } from 'react'
 
 export interface CounterProps {
@@ -22,7 +30,7 @@ export const CounterPresentation = ({
 	const incrementValue = Number(incrementAmount) || 0
 
 	return (
-		<>
+		<Box width='100%'>
 			<HStack justifyContent='center'>
 				<Button
 					size='lg'
@@ -42,7 +50,7 @@ export const CounterPresentation = ({
 					+
 				</Button>
 			</HStack>
-			<HStack justifyContent='center'>
+			<HStack justifyContent='center' spacing={4}>
 				<Input
 					width='64px'
 					fontSize='3xl'
@@ -53,16 +61,27 @@ export const CounterPresentation = ({
 					value={incrementAmount}
 					onChange={(event) => setIncrementAmount(event.target.value)}
 				/>
-				<Button size='lg' onClick={() => onIncrementByAmount(incrementValue)}>
-					Add Amount
-				</Button>
-				<Button size='lg' onClick={() => onIncrementAsync(incrementValue)}>
-					Add Async
-				</Button>
-				<Button size='lg' onClick={() => onIncrementIfOdd(incrementValue)}>
-					Add If Odd
-				</Button>
+				<Wrap spacing={2}>
+					<WrapItem>
+						<Button
+							size='lg'
+							onClick={() => onIncrementByAmount(incrementValue)}
+						>
+							Add Amount
+						</Button>
+					</WrapItem>
+					<WrapItem>
+						<Button size='lg' onClick={() => onIncrementAsync(incrementValue)}>
+							Add Async
+						</Button>
+					</WrapItem>
+					<WrapItem>
+						<Button size='lg' onClick={() => onIncrementIfOdd(incrementValue)}>
+							Add If Odd
+						</Button>
+					</WrapItem>
+				</Wrap>
 			</HStack>
-		</>
+		</Box>
 	)
 }

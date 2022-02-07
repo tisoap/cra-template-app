@@ -9,6 +9,10 @@ const semanticTokens = {
 		foreground: {
 			default: 'white',
 			_dark: 'gray.700'
+		},
+		brand: {
+			default: 'blue.500',
+			_dark: 'blue.700'
 		}
 	}
 }
