@@ -9,7 +9,7 @@ import {
 import { useAppSelector, useAppDispatch } from 'src/hooks/redux'
 import { CounterPresentation } from './Counter.presentation'
 
-export const CounterContainer = () => {
+export const Counter = () => {
 	const count = useAppSelector(selectCount)
 	const dispatch = useAppDispatch()
 

@@ -1,1 +1,1 @@
-export { CounterContainer as Counter } from './Counter.container'
+export * from './Counter.container'

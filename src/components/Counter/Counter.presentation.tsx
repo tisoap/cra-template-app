@@ -52,6 +52,7 @@ export const CounterPresentation = ({
 			</HStack>
 			<HStack justifyContent='center' spacing={4}>
 				<Input
+					type='number'
 					width='64px'
 					fontSize='3xl'
 					textAlign='center'

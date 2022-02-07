@@ -28,14 +28,7 @@
 	},
 	"jest": {
 		"collectCoverageFrom": [
-			"src/**/*.tsx",
-			"src/**/*.ts",
-			"!src/index.tsx",
-			"!src/**/*.d.ts",
-			"!src/**/*.stories.tsx",
-			"!src/client/**/*.ts",
-			"!src/utils/**/*.ts",
-			"!src/utils/**/*.tsx"
+			"src/components/**/*.presentation.tsx"
 		],
 		"coverageReporters": [
 			"text",

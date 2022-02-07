@@ -2,6 +2,8 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { CounterPresentation } from './Counter.presentation'
 
 describe('Counter Presentation', () => {
+	const addAmountLabel = 'Add Amount'
+
 	const props = {
 		count: 0,
 		onIncrement: jest.fn(),
@@ -35,7 +37,7 @@ describe('Counter Presentation', () => {
 		render(
 			<CounterPresentation {...props} onIncrementByAmount={incrementByAmount} />
 		)
-		fireEvent.click(screen.getByText('Add Amount'))
+		fireEvent.click(screen.getByText(addAmountLabel))
 		expect(incrementByAmount).toHaveBeenCalled()
 	})
 
@@ -51,5 +53,31 @@ describe('Counter Presentation', () => {
 		render(<CounterPresentation {...props} onIncrementIfOdd={incrementIfOdd} />)
 		fireEvent.click(screen.getByText('Add If Odd'))
 		expect(incrementIfOdd).toHaveBeenCalled()
+	})
+
+	test('Changes increment amount', () => {
+		const incrementByAmount = jest.fn()
+		render(
+			<CounterPresentation {...props} onIncrementByAmount={incrementByAmount} />
+		)
+		const input: HTMLInputElement = screen.getByLabelText(
+			'Set increment amount'
+		)
+		fireEvent.change(input, { target: { value: '5' } })
+		fireEvent.click(screen.getByText(addAmountLabel))
+		expect(incrementByAmount).toHaveBeenCalledWith(5)
+	})
+
+	test('Adds zero if increment is not a valid number', () => {
+		const incrementByAmount = jest.fn()
+		render(
+			<CounterPresentation {...props} onIncrementByAmount={incrementByAmount} />
+		)
+		const input: HTMLInputElement = screen.getByLabelText(
+			'Set increment amount'
+		)
+		fireEvent.change(input, { target: { value: 'abc' } })
+		fireEvent.click(screen.getByText(addAmountLabel))
+		expect(incrementByAmount).toHaveBeenCalledWith(0)
 	})
 })
