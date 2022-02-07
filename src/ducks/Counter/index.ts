@@ -1,6 +1,7 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { apiClient } from 'src/client'
-import { AppState, AppThunk } from 'src/providers/Store'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import type { AppState, AppThunk } from 'src/providers/Store'
 
 export interface CounterState {
 	value: number

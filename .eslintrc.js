@@ -62,6 +62,7 @@ module.exports = {
 		'react/react-in-jsx-scope': 'off',
 		'@typescript-eslint/no-explicit-any': 'error',
 		'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+		'@typescript-eslint/consistent-type-imports': 'error',
 		'import/order': [
 			'error',
 			{
