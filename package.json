@@ -28,7 +28,8 @@
 	},
 	"jest": {
 		"collectCoverageFrom": [
-			"src/components/**/*.presentation.tsx"
+			"src/components/**/*.presentation.tsx",
+			"src/components/**/*.container.tsx"
 		],
 		"coverageReporters": [
 			"text",

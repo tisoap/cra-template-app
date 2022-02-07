@@ -21,7 +21,7 @@ const createStore = (state: AppState) =>
 export type PartialAppState = PartialDeep<AppState>
 
 export interface Options extends RenderOptions {
-	state: PartialAppState
+	state?: PartialAppState
 }
 
 export interface Result extends RenderResult {
@@ -30,9 +30,9 @@ export interface Result extends RenderResult {
 
 export const renderWithProviders = (
 	component: ReactElement,
-	options: Options
+	options: Options = {}
 ): Result => {
-	const { state, ...renderOptions } = options
+	const { state = {}, ...renderOptions } = options
 	const initialStateClone = cloneDeep(initialState)
 	const customInitialState: AppState = merge(initialStateClone, state)
 	const store = createStore(customInitialState)

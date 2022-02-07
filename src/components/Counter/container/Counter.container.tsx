@@ -7,7 +7,7 @@ import {
 	selectCount
 } from 'src/ducks/Counter'
 import { useAppSelector, useAppDispatch } from 'src/hooks/redux'
-import { CounterPresentation } from './Counter.presentation'
+import { CounterPresentation } from '../presentation/Counter.presentation'
 
 export const Counter = () => {
 	const count = useAppSelector(selectCount)
