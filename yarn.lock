@@ -8593,6 +8593,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chromatic@npm:6.4.3":
+  version: 6.4.3
+  resolution: "chromatic@npm:6.4.3"
+  bin:
+    chroma: bin/main.cjs
+    chromatic: bin/main.cjs
+    chromatic-cli: bin/main.cjs
+  checksum: 014523cf44607f259ee435be426adb9e1fe248af96947cd01cb476dc8f59866bcf1bbb1395bd3546aa9c380934aad5868ed72d3b90c3391968b3148722328b82
+  languageName: node
+  linkType: hard
+
 "chrome-remote-interface@npm:^0.30.0":
   version: 0.30.1
   resolution: "chrome-remote-interface@npm:0.30.1"
@@ -9367,6 +9378,7 @@ __metadata:
     "@types/react-redux": 7.1.22
     "@typescript-eslint/eslint-plugin": 5.11.0
     "@typescript-eslint/parser": 5.11.0
+    chromatic: 6.4.3
     cspell: 5.18.4
     dotenv-cli: 5.0.0
     eslint: 8.8.0
