@@ -1,5 +1,14 @@
-import { createStore, combineReducers, configureStore } from '@reduxjs/toolkit'
-import { persistStore, persistReducer } from 'redux-persist'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import {
+	persistStore,
+	persistReducer,
+	FLUSH,
+	REHYDRATE,
+	PAUSE,
+	PERSIST,
+	PURGE,
+	REGISTER
+} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { counterReducer } from 'src/ducks/Counter'
 
@@ -20,5 +29,15 @@ export const store = configureStore({
 	reducer: rootReducer
 })
 
-export const persistedStore = createStore(persistedReducer)
+// https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist
+export const persistedStore = configureStore({
+	reducer: persistedReducer,
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware({
+			serializableCheck: {
+				ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+			}
+		})
+})
+
 export const persistor = persistStore(persistedStore)
