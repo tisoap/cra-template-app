@@ -2,7 +2,7 @@ module.exports = {
 	parserOptions: {
 		project: ['./tsconfig.json']
 	},
-	plugins: ['prettier', 'testcafe', 'sonarjs'],
+	plugins: ['prettier', 'testcafe', 'storybook'],
 	extends: [
 		'@tisoap/eslint-config-ts-react',
 		'plugin:prettier/recommended',
