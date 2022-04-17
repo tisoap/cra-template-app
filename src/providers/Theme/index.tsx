@@ -1,8 +1,8 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './theme'
-import type { FunctionComponent } from 'react'
+import type { ReactNode } from 'react'
 
-export const ThemeProvider: FunctionComponent = ({ children }) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 	return (
 		<ChakraProvider theme={theme} resetCSS>
 			{children}

@@ -3,9 +3,9 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { persistedStore, rootReducer, persistor } from './store'
 import type { store } from './store'
 import type { ThunkAction, Action } from '@reduxjs/toolkit'
-import type { FunctionComponent } from 'react'
+import type { ReactNode } from 'react'
 
-export const StoreProvider: FunctionComponent = ({ children }) => {
+export const StoreProvider = ({ children }: { children: ReactNode }) => {
 	return (
 		<Provider store={persistedStore}>
 			<PersistGate loading={null} persistor={persistor}>
