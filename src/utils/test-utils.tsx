@@ -8,7 +8,7 @@ import { rootReducer } from 'src/providers/Store/store'
 import { ThemeProvider } from 'src/providers/Theme'
 import type { EnhancedStore } from '@reduxjs/toolkit'
 import type { RenderOptions, RenderResult } from '@testing-library/react'
-import type { ReactElement } from 'react'
+import type { ReactNode } from 'react'
 import type { AppState } from 'src/providers/Store'
 import type { PartialDeep } from 'type-fest'
 
@@ -29,7 +29,7 @@ export interface Result extends RenderResult {
 }
 
 export const renderWithProviders = (
-	component: ReactElement,
+	component: ReactNode,
 	options: Options = {}
 ): Result => {
 	const { state = {}, ...renderOptions } = options

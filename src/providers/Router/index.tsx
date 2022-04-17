@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
-import type { FunctionComponent } from 'react'
+import type { ReactNode } from 'react'
 
-export const RouterProvider: FunctionComponent = ({ children }) => {
+export const RouterProvider = ({ children }: { children: ReactNode }) => {
 	return <BrowserRouter>{children}</BrowserRouter>
 }
