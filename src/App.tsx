@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { Layout } from 'src/components/Layout'
-import { IndexPage } from 'src/pages'
 import { CounterPage } from 'src/pages/Counter'
+import { IndexPage } from 'src/pages/IndexPage'
 import { Providers } from 'src/providers'
 
 export const App = () => (
