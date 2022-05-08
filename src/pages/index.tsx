@@ -1,9 +1,3 @@
-import { Center, Heading } from '@chakra-ui/react'
-
-export const IndexPage = () => {
-	return (
-		<Center p={5}>
-			<Heading>Index Page</Heading>
-		</Center>
-	)
-}
+export * from './CounterPage'
+export * from './IndexPage'
+export * from './GraphPage'

@@ -19,8 +19,7 @@ export const Counter = () => {
 			onDecrement={() => dispatch(decrement())}
 			onIncrement={() => dispatch(increment())}
 			onIncrementByAmount={(value) => dispatch(incrementByAmount(value))}
-			// eslint-disable-next-line @typescript-eslint/no-misused-promises
-			onIncrementAsync={(value) => dispatch(incrementAsync(value))}
+			onIncrementAsync={(value) => void dispatch(incrementAsync(value))}
 			onIncrementIfOdd={(value) => dispatch(incrementIfOdd(value))}
 		/>
 	)

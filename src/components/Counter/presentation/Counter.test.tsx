@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/react'
+import { renderConcurrently } from 'src/utils/test-utils'
 import { CounterPresentation } from './Counter.presentation'
 
 describe('Counter Presentation', () => {
@@ -14,27 +15,31 @@ describe('Counter Presentation', () => {
 	}
 
 	test('Renders count', () => {
-		render(<CounterPresentation {...props} count={2} />)
+		renderConcurrently(<CounterPresentation {...props} count={2} />)
 		expect(screen.getByText('2')).toBeInTheDocument()
 	})
 
 	test('Calls onIncrement', () => {
 		const increment = jest.fn()
-		render(<CounterPresentation {...props} onIncrement={increment} />)
+		renderConcurrently(
+			<CounterPresentation {...props} onIncrement={increment} />
+		)
 		fireEvent.click(screen.getByLabelText('Increment value'))
 		expect(increment).toHaveBeenCalled()
 	})
 
 	test('Calls onDecrement', () => {
 		const decrement = jest.fn()
-		render(<CounterPresentation {...props} onDecrement={decrement} />)
+		renderConcurrently(
+			<CounterPresentation {...props} onDecrement={decrement} />
+		)
 		fireEvent.click(screen.getByLabelText('Decrement value'))
 		expect(decrement).toHaveBeenCalled()
 	})
 
 	test('Calls onIncrementByAmount', () => {
 		const incrementByAmount = jest.fn()
-		render(
+		renderConcurrently(
 			<CounterPresentation {...props} onIncrementByAmount={incrementByAmount} />
 		)
 		fireEvent.click(screen.getByText(addAmountLabel))
@@ -43,21 +48,25 @@ describe('Counter Presentation', () => {
 
 	test('Calls onIncrementAsync', () => {
 		const incrementAsync = jest.fn()
-		render(<CounterPresentation {...props} onIncrementAsync={incrementAsync} />)
+		renderConcurrently(
+			<CounterPresentation {...props} onIncrementAsync={incrementAsync} />
+		)
 		fireEvent.click(screen.getByText('Add Async'))
 		expect(incrementAsync).toHaveBeenCalled()
 	})
 
 	test('Calls onIncrementIfOdd', () => {
 		const incrementIfOdd = jest.fn()
-		render(<CounterPresentation {...props} onIncrementIfOdd={incrementIfOdd} />)
+		renderConcurrently(
+			<CounterPresentation {...props} onIncrementIfOdd={incrementIfOdd} />
+		)
 		fireEvent.click(screen.getByText('Add If Odd'))
 		expect(incrementIfOdd).toHaveBeenCalled()
 	})
 
 	test('Changes increment amount', () => {
 		const incrementByAmount = jest.fn()
-		render(
+		renderConcurrently(
 			<CounterPresentation {...props} onIncrementByAmount={incrementByAmount} />
 		)
 		const input: HTMLInputElement = screen.getByLabelText(
@@ -70,7 +79,7 @@ describe('Counter Presentation', () => {
 
 	test('Adds zero if increment is not a valid number', () => {
 		const incrementByAmount = jest.fn()
-		render(
+		renderConcurrently(
 			<CounterPresentation {...props} onIncrementByAmount={incrementByAmount} />
 		)
 		const input: HTMLInputElement = screen.getByLabelText(
