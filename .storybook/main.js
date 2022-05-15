@@ -15,6 +15,9 @@ module.exports = {
 	typescript: {
 		check: true
 	},
+	features: {
+		emotionAlias: false
+	},
 	webpackFinal: async (config) => {
 		// Enable absolute path imports
 		config.resolve.modules.push(path.resolve(__dirname, '../'))
