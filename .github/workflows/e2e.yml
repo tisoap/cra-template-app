@@ -1,0 +1,32 @@
+name: End-to-End Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+      - name: Install Dependencies
+        run: yarn install --silent
+      - name: Deploy to Vercel
+        id: deploy
+        uses: amondnet/vercel-action@v20.0.0
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+      - name: Run End-to-End Tests
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: "chrome:headless src/e2e/tests"
+        env:
+          TEST_URL: ${{ steps.deploy.outputs.preview-url }}
