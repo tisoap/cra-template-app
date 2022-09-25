@@ -16,7 +16,7 @@
 
 ---
 
-This project was bootstrapped using [cra-template-app](https://github.com/tisoap/cra-template-app), a batteries included `create-react-app` template with Chakra UI & Typescript made by [Tiso Alvarez Puccinelli](https://github.com/tisoap).
+This project was bootstrapped using [cra-template-app](https://github.com/tisoap/cra-template-app), a batteries included `create-react-app` template with Chakra UI, Redux & Typescript made by [Tiso Alvarez Puccinelli](https://github.com/tisoap).
 
 ## Requirements
 
